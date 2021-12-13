@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# This script truncates tables that need not be exported
-# within the DDEV-hosted database.
+## Description: Truncate tables (within the DDEV-hosted database) that need not be exported to database dumps.
 
 (
 cat << END
@@ -48,4 +47,4 @@ TRUNCATE TABLE db.sys_log;
 
 TRUNCATE TABLE db.sys_refindex;
 END
-) | ddev mysql
+) | mysql

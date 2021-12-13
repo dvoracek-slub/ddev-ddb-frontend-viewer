@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ddev db-cleanup
+ddev db-export "$1"

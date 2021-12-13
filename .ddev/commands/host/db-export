@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-SCRIPTDIR=$(dirname "$0")
-source "$SCRIPTDIR/util.sh"
+## Description: Export running database to .sql dump
+## Usage: db-export [db.sql]
+
+source ".ddev/commands/util.sh"
 
 DBFILE=$(db_file $1)
 
