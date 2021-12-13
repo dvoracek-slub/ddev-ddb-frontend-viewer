@@ -38,4 +38,7 @@ ddev typo3cms install:setup \
     --admin-password=adminslub \
     --site-setup-type=site \
     --site-name=DDB_Frontend_Viewer
+
+# Install sample .htaccess, which is important for URL rewriting
+wget -O web/.htaccess https://raw.githubusercontent.com/TYPO3/typo3/v7.6.32/_.htaccess
 ```
