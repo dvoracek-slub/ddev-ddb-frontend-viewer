@@ -42,3 +42,35 @@ ddev typo3cms install:setup \
 # Install sample .htaccess, which is important for URL rewriting
 wget -O web/.htaccess https://raw.githubusercontent.com/TYPO3/typo3/v7.6.32/_.htaccess
 ```
+
+## Setup composer and install extensions
+
+```bash
+mkdir extensions
+touch extensions/.gitkeep
+
+git clone --branch fix-compatibility git@github.com:Deutsche-Digitale-Bibliothek/ddb-frontend-viewer.git extensions/ddb-frontend-viewer/
+
+ddev composer config minimum-stability dev
+
+# NOTE: Ensure repository order by first removing composer repository
+ddev composer config --unset repositories.0
+ddev composer config repositories.local path "./extensions/*"
+ddev composer config repositories.0 composer "https://composer.typo3.org/"
+
+ddev composer require kitodo/presentation:~2.3.0
+ddev composer require slub/ddb-frontend-viewer:dev-fix-compatibility
+
+# Tolerate cHash errors, which is necessary when URLs containing a `tx_dlf[id]`
+# parameter are generated on the client.
+ddev typo3cms configuration:set FE/pageNotFoundOnCHashError 0
+
+ddev typo3cms extension:activate dlf
+ddev typo3cms extension:activate ddb_frontend_viewer
+
+ddev typo3cms database:updateschema
+```
+
+## In TYPO3 Backend
+
+- Open extension configuration for Kitodo.Presentation (this is just to amend `LocalConfiguration.php`)

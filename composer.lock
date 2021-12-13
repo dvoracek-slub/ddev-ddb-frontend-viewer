@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f51b461a8bb687a3cfabe6e4dbe47282",
+    "content-hash": "b1102bad7757ceb9b798619d85815588",
     "packages": [
         {
             "name": "brumann/polyfill-unserialize",
@@ -286,6 +286,100 @@
             ],
             "abandoned": true,
             "time": "2020-05-28T13:44:02+00:00"
+        },
+        {
+            "name": "kitodo/presentation",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitodo/kitodo-presentation.git",
+                "reference": "b0282925762690e46ac0198a3020b8e35f597c01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitodo/kitodo-presentation/zipball/b0282925762690e46ac0198a3020b8e35f597c01",
+                "reference": "b0282925762690e46ac0198a3020b8e35f597c01",
+                "shasum": ""
+            },
+            "require": {
+                "solarium/solarium": "^4.0",
+                "typo3/cms": "^7.6"
+            },
+            "replace": {
+                "typo3-ter/dlf": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "dlf"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "cli/class.tx_dlf_cli.php",
+                    "common/class.tx_dlf_alto.php",
+                    "common/class.tx_dlf_document.php",
+                    "common/class.tx_dlf_format.php",
+                    "common/class.tx_dlf_fulltext.php",
+                    "common/class.tx_dlf_helper.php",
+                    "common/class.tx_dlf_indexing.php",
+                    "common/class.tx_dlf_list.php",
+                    "common/class.tx_dlf_mods.php",
+                    "common/class.tx_dlf_module.php",
+                    "common/class.tx_dlf_plugin.php",
+                    "common/class.tx_dlf_solr.php",
+                    "common/class.tx_dlf_teihdr.php",
+                    "hooks/class.tx_dlf_doctype.php",
+                    "hooks/class.tx_dlf_em.php",
+                    "hooks/class.tx_dlf_hacks.php",
+                    "hooks/class.tx_dlf_tceforms.php",
+                    "hooks/class.tx_dlf_tcemain.php",
+                    "modules/indexing/index.php",
+                    "modules/newclient/index.php",
+                    "plugins/audioplayer/class.tx_dlf_audioplayer.php",
+                    "plugins/basket/class.tx_dlf_basket.php",
+                    "plugins/collection/class.tx_dlf_collection.php",
+                    "plugins/feeds/class.tx_dlf_feeds.php",
+                    "plugins/listview/class.tx_dlf_listview.php",
+                    "plugins/metadata/class.tx_dlf_metadata.php",
+                    "plugins/navigation/class.tx_dlf_navigation.php",
+                    "plugins/newspaper/class.tx_dlf_newspaper.php",
+                    "plugins/oai/class.tx_dlf_oai.php",
+                    "plugins/pagegrid/class.tx_dlf_pagegrid.php",
+                    "plugins/pageview/class.tx_dlf_pageview.php",
+                    "plugins/search/class.tx_dlf_search.php",
+                    "plugins/search/class.tx_dlf_search_suggest.php",
+                    "plugins/statistics/class.tx_dlf_statistics.php",
+                    "plugins/toc/class.tx_dlf_toc.php",
+                    "plugins/toolbox/class.tx_dlf_toolbox.php",
+                    "plugins/toolbox/tools/pdf/class.tx_dlf_toolsPdf.php",
+                    "plugins/toolbox/tools/fulltext/class.tx_dlf_toolsFulltext.php",
+                    "plugins/toolbox/tools/imagemanipulation/class.tx_dlf_toolsImagemanipulation.php",
+                    "plugins/toolbox/tools/imagedownload/class.tx_dlf_toolsImagedownload.php",
+                    "plugins/validator/class.tx_dlf_validator.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Kitodo. Key to digital objects e.V.",
+                    "email": "contact@kitodo.org",
+                    "homepage": "https://www.kitodo.org/",
+                    "role": "provider"
+                },
+                {
+                    "name": "Sebastian Meyer",
+                    "email": "sebastian.meyer@slub-dresden.de",
+                    "homepage": "https://www.slub-dresden.de/",
+                    "role": "maintainer"
+                }
+            ],
+            "description": "Base plugins, modules, services and API of the Digital Library Framework. It is part of the community-based Kitodo Digitization Suite.",
+            "homepage": "https://www.kitodo.org/",
+            "time": "2020-07-30T07:32:47+00:00"
         },
         {
             "name": "mso/idna-convert",
@@ -614,6 +708,106 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
+            "name": "slub/ddb-frontend-viewer",
+            "version": "dev-fix-compatibility",
+            "dist": {
+                "type": "path",
+                "url": "./extensions/ddb-frontend-viewer",
+                "reference": "aba3cf3c3599e804f79dc7b575d748b04304bb40"
+            },
+            "require": {
+                "kitodo/presentation": "~2.3.0",
+                "typo3/cms-core": "^7.6"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "ddb_frontend_viewer"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Slub\\DdbFrontendViewer\\": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Bigga",
+                    "email": "alexander.bigga@slub-dresden.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Viewer based on Kitodo.Presentation, customized for DDB",
+            "homepage": "https://github.com/Deutsche-Digitale-Bibliothek/ddb-frontend-viewer",
+            "keywords": [
+                "TYPO3 CMS"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "solarium/solarium",
+            "version": "4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/solariumphp/solarium.git",
+                "reference": "20cf9e906a4e8e4a29c1ff48a2b145fa31d1064d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/20cf9e906a4e8e4a29c1ff48a2b145fa31d1064d",
+                "reference": "20cf9e906a4e8e4a29c1ff48a2b145fa31d1064d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/event-dispatcher": "^2.7 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^3.8 || ^6.2",
+                "php-coveralls/php-coveralls": "^1.0",
+                "phpunit/phpunit": "^6.5",
+                "squizlabs/php_codesniffer": "^1.4",
+                "zendframework/zendframework": "^3.0"
+            },
+            "suggest": {
+                "minimalcode/search": "Query builder compatible with Solarium, allows simplified solr-query handling"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Solarium\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "See GitHub contributors",
+                    "homepage": "https://github.com/basdenooijer/solarium/contributors"
+                }
+            ],
+            "description": "PHP Solr client",
+            "homepage": "http://www.solarium-project.org",
+            "keywords": [
+                "php",
+                "search",
+                "solr"
+            ],
+            "time": "2018-11-24T09:20:30+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.12",
             "source": {
@@ -787,6 +981,163 @@
             "time": "2018-11-11T11:18:13+00:00"
         },
         {
+            "name": "symfony/event-dispatcher",
+            "version": "v4.4.34",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "1a024b45369c9d55d76b6b8a241bd20c9ea1cbd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/1a024b45369c9d55d76b6b8a241bd20c9ea1cbd8",
+                "reference": "1a024b45369c9d55d76b6b8a241bd20c9ea1cbd8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/event-dispatcher-contracts": "^1.1",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4"
+            },
+            "provide": {
+                "psr/event-dispatcher-implementation": "1.0",
+                "symfony/event-dispatcher-implementation": "1.1"
+            },
+            "require-dev": {
+                "psr/log": "^1|^2|^3",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/error-handler": "~3.4|~4.4",
+                "symfony/expression-language": "^3.4|^4.0|^5.0",
+                "symfony/http-foundation": "^3.4|^4.0|^5.0",
+                "symfony/service-contracts": "^1.1|^2",
+                "symfony/stopwatch": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-11-15T14:42:25+00:00"
+        },
+        {
+            "name": "symfony/event-dispatcher-contracts",
+            "version": "v1.1.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher-contracts.git",
+                "reference": "01e9a4efac0ee33a05dfdf93b346f62e7d0e998c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/01e9a4efac0ee33a05dfdf93b346f62e7d0e998c",
+                "reference": "01e9a4efac0ee33a05dfdf93b346f62e7d0e998c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3"
+            },
+            "suggest": {
+                "psr/event-dispatcher": "",
+                "symfony/event-dispatcher-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.1-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\EventDispatcher\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to dispatching event",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-23T15:25:38+00:00"
+        },
+        {
             "name": "symfony/finder",
             "version": "v2.8.52",
             "source": {
@@ -911,6 +1262,86 @@
                 }
             ],
             "time": "2021-05-27T12:26:48+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.23.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-07-28T13:41:28+00:00"
         },
         {
             "name": "symfony/process",
@@ -1362,8 +1793,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "slub/ddb-frontend-viewer": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

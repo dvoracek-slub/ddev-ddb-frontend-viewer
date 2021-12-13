@@ -1948,6 +1948,526 @@ LOCK TABLES `tt_content` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tx_dlf_actionlog`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_actionlog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_actionlog` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `file_name` varchar(255) NOT NULL DEFAULT '',
+  `count_pages` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(100) NOT NULL DEFAULT '',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_actionlog`
+--
+
+LOCK TABLES `tx_dlf_actionlog` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_actionlog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_actionlog` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_basket`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_basket`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_basket` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `session_id` varchar(32) NOT NULL DEFAULT '',
+  `fe_user_id` int(11) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l18n_parent` int(11) NOT NULL DEFAULT '0',
+  `l18n_diffsource` mediumblob NOT NULL,
+  `doc_ids` varchar(255) NOT NULL DEFAULT '',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `language` (`l18n_parent`,`sys_language_uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_basket`
+--
+
+LOCK TABLES `tx_dlf_basket` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_basket` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_basket` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_collections`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_collections`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_collections` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `fe_cruser_id` int(11) NOT NULL DEFAULT '0',
+  `fe_admin_lock` smallint(6) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l18n_parent` int(11) NOT NULL DEFAULT '0',
+  `l18n_diffsource` mediumblob NOT NULL,
+  `hidden` smallint(6) NOT NULL DEFAULT '0',
+  `fe_group` varchar(100) NOT NULL DEFAULT '',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `index_name` varchar(255) NOT NULL DEFAULT '',
+  `index_search` text NOT NULL,
+  `oai_name` varchar(255) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `thumbnail` text NOT NULL,
+  `priority` smallint(6) NOT NULL DEFAULT '3',
+  `documents` int(11) NOT NULL DEFAULT '0',
+  `owner` int(11) NOT NULL DEFAULT '0',
+  `status` smallint(6) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `language` (`l18n_parent`,`sys_language_uid`),
+  KEY `index_name` (`index_name`(191)),
+  KEY `oai_name` (`oai_name`(191)),
+  KEY `pid_cruser` (`pid`,`fe_cruser_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_collections`
+--
+
+LOCK TABLES `tx_dlf_collections` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_collections` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_collections` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_documents`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_documents`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_documents` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `hidden` smallint(6) NOT NULL DEFAULT '0',
+  `starttime` int(11) NOT NULL DEFAULT '0',
+  `endtime` int(11) NOT NULL DEFAULT '0',
+  `fe_group` varchar(100) NOT NULL DEFAULT '',
+  `prod_id` varchar(255) NOT NULL DEFAULT '',
+  `location` varchar(255) NOT NULL DEFAULT '',
+  `record_id` varchar(255) NOT NULL DEFAULT '',
+  `opac_id` varchar(255) NOT NULL DEFAULT '',
+  `union_id` varchar(255) NOT NULL DEFAULT '',
+  `urn` varchar(255) NOT NULL DEFAULT '',
+  `purl` varchar(255) NOT NULL DEFAULT '',
+  `title` text NOT NULL,
+  `title_sorting` text NOT NULL,
+  `author` varchar(255) NOT NULL DEFAULT '',
+  `year` varchar(255) NOT NULL DEFAULT '',
+  `place` varchar(255) NOT NULL DEFAULT '',
+  `thumbnail` varchar(255) NOT NULL DEFAULT '',
+  `metadata` text NOT NULL,
+  `metadata_sorting` text NOT NULL,
+  `structure` int(11) NOT NULL DEFAULT '0',
+  `partof` int(11) NOT NULL DEFAULT '0',
+  `volume` varchar(255) NOT NULL DEFAULT '',
+  `volume_sorting` varchar(255) NOT NULL DEFAULT '',
+  `collections` int(11) NOT NULL DEFAULT '0',
+  `owner` int(11) NOT NULL DEFAULT '0',
+  `mets_label` varchar(255) NOT NULL DEFAULT '',
+  `mets_orderlabel` varchar(255) NOT NULL DEFAULT '',
+  `solrcore` int(11) NOT NULL DEFAULT '0',
+  `status` smallint(6) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `location` (`location`(191)),
+  KEY `record_id` (`record_id`(191)),
+  KEY `partof` (`partof`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_documents`
+--
+
+LOCK TABLES `tx_dlf_documents` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_documents` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_documents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_formats`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_formats`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_formats` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `type` varchar(255) NOT NULL DEFAULT '',
+  `root` varchar(255) NOT NULL DEFAULT '',
+  `namespace` varchar(255) NOT NULL DEFAULT '',
+  `class` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_formats`
+--
+
+LOCK TABLES `tx_dlf_formats` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_formats` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_formats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_libraries`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_libraries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_libraries` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l18n_parent` int(11) NOT NULL DEFAULT '0',
+  `l18n_diffsource` mediumblob NOT NULL,
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `index_name` varchar(255) NOT NULL DEFAULT '',
+  `website` varchar(255) NOT NULL DEFAULT '',
+  `contact` varchar(255) NOT NULL DEFAULT '',
+  `image` mediumblob NOT NULL,
+  `oai_label` varchar(255) NOT NULL DEFAULT '',
+  `oai_base` int(11) NOT NULL DEFAULT '0',
+  `opac_label` varchar(255) NOT NULL DEFAULT '',
+  `opac_base` varchar(255) NOT NULL DEFAULT '',
+  `union_label` varchar(255) NOT NULL DEFAULT '',
+  `union_base` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `language` (`l18n_parent`,`sys_language_uid`),
+  KEY `index_name` (`index_name`(191))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_libraries`
+--
+
+LOCK TABLES `tx_dlf_libraries` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_libraries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_libraries` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_mail`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_mail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_mail` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `mail` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `sorting` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_mail`
+--
+
+LOCK TABLES `tx_dlf_mail` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_mail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_mail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_metadata`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_metadata`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_metadata` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l18n_parent` int(11) NOT NULL DEFAULT '0',
+  `l18n_diffsource` mediumblob NOT NULL,
+  `hidden` smallint(6) NOT NULL DEFAULT '0',
+  `sorting` int(11) NOT NULL DEFAULT '0',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `index_name` varchar(255) NOT NULL DEFAULT '',
+  `format` int(11) NOT NULL DEFAULT '0',
+  `default_value` varchar(255) NOT NULL DEFAULT '',
+  `wrap` text NOT NULL,
+  `index_tokenized` smallint(6) NOT NULL DEFAULT '0',
+  `index_stored` smallint(6) NOT NULL DEFAULT '0',
+  `index_indexed` smallint(6) NOT NULL DEFAULT '0',
+  `index_boost` float(4,2) NOT NULL DEFAULT '1.00',
+  `is_sortable` smallint(6) NOT NULL DEFAULT '0',
+  `is_facet` smallint(6) NOT NULL DEFAULT '0',
+  `is_listed` smallint(6) NOT NULL DEFAULT '0',
+  `index_autocomplete` smallint(6) NOT NULL DEFAULT '0',
+  `status` smallint(6) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `language` (`l18n_parent`,`sys_language_uid`),
+  KEY `index_name` (`index_name`(191)),
+  KEY `index_autocomplete` (`index_autocomplete`),
+  KEY `is_sortable` (`is_sortable`),
+  KEY `is_facet` (`is_facet`),
+  KEY `is_listed` (`is_listed`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_metadata`
+--
+
+LOCK TABLES `tx_dlf_metadata` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_metadata` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_metadata` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_metadataformat`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_metadataformat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_metadataformat` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `encoded` int(11) NOT NULL DEFAULT '0',
+  `xpath` varchar(1024) NOT NULL DEFAULT '',
+  `xpath_sorting` varchar(255) NOT NULL DEFAULT '',
+  `mandatory` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `parent_id` (`parent_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_metadataformat`
+--
+
+LOCK TABLES `tx_dlf_metadataformat` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_metadataformat` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_metadataformat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_printer`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_printer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_printer` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `print` varchar(255) NOT NULL DEFAULT '',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_printer`
+--
+
+LOCK TABLES `tx_dlf_printer` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_printer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_printer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_relations`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_relations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_relations` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid_local` int(11) NOT NULL DEFAULT '0',
+  `uid_foreign` int(11) NOT NULL DEFAULT '0',
+  `tablenames` varchar(30) NOT NULL DEFAULT '',
+  `sorting` int(11) NOT NULL DEFAULT '0',
+  `sorting_foreign` int(11) NOT NULL DEFAULT '0',
+  `ident` varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`),
+  KEY `local_foreign` (`uid_local`,`uid_foreign`,`ident`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_relations`
+--
+
+LOCK TABLES `tx_dlf_relations` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_relations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_relations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_solrcores`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_solrcores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_solrcores` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `index_name` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `index_name` (`index_name`(191))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_solrcores`
+--
+
+LOCK TABLES `tx_dlf_solrcores` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_solrcores` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_solrcores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_structures`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_structures`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_structures` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `crdate` int(11) NOT NULL DEFAULT '0',
+  `cruser_id` int(11) NOT NULL DEFAULT '0',
+  `deleted` smallint(6) NOT NULL DEFAULT '0',
+  `sys_language_uid` int(11) NOT NULL DEFAULT '0',
+  `l18n_parent` int(11) NOT NULL DEFAULT '0',
+  `l18n_diffsource` mediumblob NOT NULL,
+  `hidden` smallint(6) NOT NULL DEFAULT '0',
+  `toplevel` smallint(6) NOT NULL DEFAULT '0',
+  `label` varchar(255) NOT NULL DEFAULT '',
+  `index_name` varchar(255) NOT NULL DEFAULT '',
+  `oai_name` varchar(255) NOT NULL DEFAULT '',
+  `thumbnail` int(11) NOT NULL DEFAULT '0',
+  `status` smallint(6) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`),
+  KEY `parent` (`pid`),
+  KEY `language` (`l18n_parent`,`sys_language_uid`),
+  KEY `index_name` (`index_name`(191))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_structures`
+--
+
+LOCK TABLES `tx_dlf_structures` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_structures` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_structures` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tx_dlf_tokens`
+--
+
+DROP TABLE IF EXISTS `tx_dlf_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tx_dlf_tokens` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `tstamp` int(11) NOT NULL DEFAULT '0',
+  `token` varchar(255) NOT NULL DEFAULT '',
+  `options` mediumtext NOT NULL,
+  `ident` varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`),
+  KEY `token` (`token`(191))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tx_dlf_tokens`
+--
+
+LOCK TABLES `tx_dlf_tokens` WRITE;
+/*!40000 ALTER TABLE `tx_dlf_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tx_dlf_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tx_extensionmanager_domain_model_extension`
 --
 

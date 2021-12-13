@@ -154,6 +154,18 @@ return [
             'packagePath' => 'typo3/sysext/dbal/',
             'suggestions' => [],
         ],
+        'ddb_frontend_viewer' => [
+            'composerName' => 'slub/ddb-frontend-viewer',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/ddb_frontend_viewer/',
+            'suggestions' => [],
+        ],
+        'dlf' => [
+            'composerName' => 'kitodo/presentation',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/dlf/',
+            'suggestions' => [],
+        ],
         'documentation' => [
             'composerName' => 'typo3/cms-documentation',
             'state' => 'inactive',
