@@ -72,6 +72,10 @@ ddev typo3cms extension:activate beuser
 ddev typo3cms extension:activate belog
 ddev typo3cms extension:activate tstemplate
 
+ddev typo3cms extension:activate impexp
+ddev typo3cms extension:activate lowlevel
+ddev typo3cms extension:activate info
+
 ddev typo3cms database:updateschema
 ```
 
@@ -81,7 +85,12 @@ Make sure that `dlf` is listed before `ddb_frontend_viewer` in [web/typo3conf/Pa
 
 ## In TYPO3 Backend
 
-- Open extension configuration for Kitodo.Presentation (this is just to amend `LocalConfiguration.php`)
+- Languages
+  - In module `Language`, add German
+  - In module `List`, create new "Website Language" record (English, en-us-gb)
+  - In module `Backend users`, set default language of admin user to German
+- Open extension configuration for Kitodo.Presentation (this is to amend `LocalConfiguration.php` and fill `tx_dlf_formats`)
+  - In module `List`, check that formats "MODS" and "TEIHDR" are present on root page
 - Create a backend user group `_cli_dlf`.
 - Create folder: `DDB_Frontend_Viewer > Data`
   - In module `Kitodo > DDB Viewer`, add configuration
@@ -95,3 +104,13 @@ Make sure that `dlf` is listed before `ddb_frontend_viewer` in [web/typo3conf/Pa
         - DDB Frontend Viewer (ddb_frontend_viewer)
     - Set Constants
       - `config.storagePid = 2` (use the PID of data folder)
+- Debug options in install tool (save by clicking "Write configuration"):
+  - `[BE][debug]`
+  - `[FE][debug]`
+  - `[SYS][clearCacheSystem]`
+  - `[SYS][enableDeprecationLog] = "file"`
+  - `[SYS][exceptionalErrors]` (bitset)<br>
+    See https://www.php.net/manual/de/errorfunc.constants.php for possible flags<br>
+    (e.g., use 28674 to also turn warnings and deprecation notices to exceptions)
+  - `[SYS][sqlDebug] = 1`
+  - `[SYS][systemLogLevel] = 0`
