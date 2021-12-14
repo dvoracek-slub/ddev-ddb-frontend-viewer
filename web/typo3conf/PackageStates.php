@@ -44,6 +44,18 @@ return [
             'packagePath' => 'typo3/sysext/backend/',
             'suggestions' => [],
         ],
+        'belog' => [
+            'composerName' => 'typo3/cms-belog',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/belog/',
+            'suggestions' => [],
+        ],
+        'beuser' => [
+            'composerName' => 'typo3/cms-beuser',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/beuser/',
+            'suggestions' => [],
+        ],
         'cshmanual' => [
             'composerName' => 'typo3/cms-cshmanual',
             'state' => 'active',
@@ -62,10 +74,28 @@ return [
             'packagePath' => 'typo3/sysext/frontend/',
             'suggestions' => [],
         ],
+        'impexp' => [
+            'composerName' => 'typo3/cms-impexp',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/impexp/',
+            'suggestions' => [],
+        ],
+        'info' => [
+            'composerName' => 'typo3/cms-info',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/info/',
+            'suggestions' => [],
+        ],
         'install' => [
             'composerName' => 'typo3/cms-install',
             'state' => 'active',
             'packagePath' => 'typo3/sysext/install/',
+            'suggestions' => [],
+        ],
+        'lowlevel' => [
+            'composerName' => 'typo3/cms-lowlevel',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/lowlevel/',
             'suggestions' => [],
         ],
         'recordlist' => [
@@ -100,6 +130,24 @@ return [
             'packagePath' => 'typo3/sysext/t3skin/',
             'suggestions' => [],
         ],
+        'tstemplate' => [
+            'composerName' => 'typo3/cms-tstemplate',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/tstemplate/',
+            'suggestions' => [],
+        ],
+        'dlf' => [
+            'composerName' => 'kitodo/presentation',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/dlf/',
+            'suggestions' => [],
+        ],
+        'ddb_frontend_viewer' => [
+            'composerName' => 'slub/ddb-frontend-viewer',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/ddb_frontend_viewer/',
+            'suggestions' => [],
+        ],
         'typo3_console' => [
             'composerName' => 'typo3_console',
             'state' => 'active',
@@ -124,18 +172,6 @@ return [
             'packagePath' => 'typo3/sysext/adodb/',
             'suggestions' => [],
         ],
-        'belog' => [
-            'composerName' => 'typo3/cms-belog',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/belog/',
-            'suggestions' => [],
-        ],
-        'beuser' => [
-            'composerName' => 'typo3/cms-beuser',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/beuser/',
-            'suggestions' => [],
-        ],
         'context_help' => [
             'composerName' => 'typo3/cms-context-help',
             'state' => 'inactive',
@@ -152,18 +188,6 @@ return [
             'composerName' => 'typo3/cms-dbal',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/dbal/',
-            'suggestions' => [],
-        ],
-        'dlf' => [
-            'composerName' => 'kitodo/presentation',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/dlf/',
-            'suggestions' => [],
-        ],
-        'ddb_frontend_viewer' => [
-            'composerName' => 'slub/ddb-frontend-viewer',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/ddb_frontend_viewer/',
             'suggestions' => [],
         ],
         'documentation' => [
@@ -208,12 +232,6 @@ return [
             'packagePath' => 'typo3/sysext/func/',
             'suggestions' => [],
         ],
-        'impexp' => [
-            'composerName' => 'typo3/cms-impexp',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/impexp/',
-            'suggestions' => [],
-        ],
         'indexed_search' => [
             'composerName' => 'typo3/cms-indexed-search',
             'state' => 'inactive',
@@ -228,12 +246,6 @@ return [
             'packagePath' => 'typo3/sysext/indexed_search_mysql/',
             'suggestions' => [],
         ],
-        'info' => [
-            'composerName' => 'typo3/cms-info',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/info/',
-            'suggestions' => [],
-        ],
         'info_pagetsconfig' => [
             'composerName' => 'typo3/cms-info-pagetsconfig',
             'state' => 'inactive',
@@ -244,12 +256,6 @@ return [
             'composerName' => 'typo3/cms-linkvalidator',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/linkvalidator/',
-            'suggestions' => [],
-        ],
-        'lowlevel' => [
-            'composerName' => 'typo3/cms-lowlevel',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/lowlevel/',
             'suggestions' => [],
         ],
         'opendocs' => [
@@ -315,12 +321,6 @@ return [
             'suggestions' => [
                 'sys_action',
             ],
-        ],
-        'tstemplate' => [
-            'composerName' => 'typo3/cms-tstemplate',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/tstemplate/',
-            'suggestions' => [],
         ],
         'version' => [
             'composerName' => 'typo3/cms-version',

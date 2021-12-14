@@ -12,9 +12,12 @@ typo3_src
 web/index.php
 web/typo3
 
-web/typo3conf/ext
+web/typo3conf/
+!web/typo3conf/ext
 
 web/fileadmin/_temp_
 web/fileadmin/user_upload/_temp_
 
 typo3temp
+
+extensions
