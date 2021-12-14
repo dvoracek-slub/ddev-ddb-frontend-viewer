@@ -70,6 +70,7 @@ ddev typo3cms extension:activate ddb_frontend_viewer
 
 ddev typo3cms extension:activate beuser
 ddev typo3cms extension:activate belog
+ddev typo3cms extension:activate tstemplate
 
 ddev typo3cms database:updateschema
 ```
@@ -86,3 +87,11 @@ Make sure that `dlf` is listed before `ddb_frontend_viewer` in [web/typo3conf/Pa
   - In module `Kitodo > DDB Viewer`, add configuration
   - In module `Kitodo > New Client`, grant access to `_cli_dlf`.
 - Create and enable page: `DDB_Frontend_Viewer > Home > Viewer`
+  - Create extension template for the page
+    - Edit whole template record
+      - Check `Options > Clear > Setup`
+      - In `Includes`, select:
+        - Basic Configuration (dlf)
+        - DDB Frontend Viewer (ddb_frontend_viewer)
+    - Set Constants
+      - `config.storagePid = 2` (use the PID of data folder)

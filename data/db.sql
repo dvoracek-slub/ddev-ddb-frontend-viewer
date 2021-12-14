@@ -955,7 +955,7 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (1,0,0,0,0,'',0,0,0,0,0,0,1639423294,0,0,1,1,31,31,1,0,1639423294,1,0,'Home',1,NULL,1,0,0,'',0,0,0,0,0,0,'0','',0,0,'',0,0,NULL,0,'',0,NULL,0,1639423294,NULL,'',0,'','','',0,0,0,0,'',0,0,'','',NULL,0),(2,0,0,0,0,'',0,0,0,0,0,0,1639471263,256,0,1,0,31,27,0,0,1639471245,1,0,'Data',254,'',0,0,0,'',0,0,1,0,0,0,'','',0,0,'',0,0,'',0,'',0,'',0,0,'','',0,'','','',0,0,0,0,'',0,0,'','','',0),(3,1,0,0,0,'',0,0,0,0,0,0,1639471370,256,0,1,0,31,27,0,0,1639471367,1,0,'Viewer',1,'',0,0,0,'',0,0,1,0,0,0,'','',0,0,'',0,0,'',0,'',0,'',0,0,'','',0,'','','',0,0,0,0,'',0,0,'','','',0);
+INSERT INTO `pages` VALUES (1,0,0,0,0,'',0,0,0,0,0,0,1639423294,0,0,1,1,31,31,1,0,1639423294,1,0,'Home',1,NULL,1,0,0,'',0,0,0,0,0,0,'0','',0,0,'',0,0,NULL,0,'',0,NULL,0,1639423294,NULL,'',0,'','','',0,0,0,0,'',0,0,'','',NULL,0),(2,0,0,0,0,'',0,0,0,0,0,0,1639471263,256,0,1,0,31,27,0,0,1639471245,1,0,'Data',254,'',0,0,0,'',0,0,1,0,0,0,'','',0,0,'',0,0,'',0,'',0,'',0,0,'','',0,'','','',0,0,0,0,'',0,0,'','','',0),(3,1,0,0,0,'',0,0,0,0,0,0,1639474838,256,0,1,0,31,27,0,0,1639471367,1,0,'Viewer',1,'',0,0,0,'',0,0,1,0,0,0,'','',0,0,'',0,0,'',0,'',0,'',0,1639474838,'','',0,'','','',0,0,0,0,'',0,0,'','','',0);
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1273,7 +1273,7 @@ CREATE TABLE `sys_file` (
   KEY `tstamp` (`tstamp`),
   KEY `lastindex` (`last_indexed`),
   KEY `sha1` (`sha1`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1282,6 +1282,7 @@ CREATE TABLE `sys_file` (
 
 LOCK TABLES `sys_file` WRITE;
 /*!40000 ALTER TABLE `sys_file` DISABLE KEYS */;
+INSERT INTO `sys_file` VALUES (1,0,1639474474,0,0,0,'2',0,'/typo3conf/ext/ddb_frontend_viewer/Resources/Public/Images/loadingAnimation.svg','567d03f07f517b92fcc0d9bdb251f3f97940fec5','be922e28c3840fe2159f175ed8425d14baab8b8e','svg','image/svg+xml','loadingAnimation.svg','62d1ceb13724535442e85f86544b0333c2382a29',428,1639428432,1639428432);
 /*!40000 ALTER TABLE `sys_file` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1375,7 +1376,7 @@ CREATE TABLE `sys_file_metadata` (
   KEY `file` (`file`),
   KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`),
   KEY `fal_filelist` (`l10n_parent`,`sys_language_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1384,6 +1385,7 @@ CREATE TABLE `sys_file_metadata` (
 
 LOCK TABLES `sys_file_metadata` WRITE;
 /*!40000 ALTER TABLE `sys_file_metadata` DISABLE KEYS */;
+INSERT INTO `sys_file_metadata` VALUES (1,0,1639474474,1639474473,1,0,0,'',0,0,0,'',0,0,0,0,0,0,1,NULL,40,40,NULL,NULL,0);
 /*!40000 ALTER TABLE `sys_file_metadata` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1785,7 +1787,7 @@ CREATE TABLE `sys_registry` (
   `entry_value` blob,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `entry_identifier` (`entry_namespace`,`entry_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1794,7 +1796,7 @@ CREATE TABLE `sys_registry` (
 
 LOCK TABLES `sys_registry` WRITE;
 /*!40000 ALTER TABLE `sys_registry` DISABLE KEYS */;
-INSERT INTO `sys_registry` VALUES (1,'extensionDataImport','typo3/sysext/core/ext_tables_static+adt.sql','s:0:\"\";'),(2,'extensionDataImport','typo3/sysext/extbase/ext_tables_static+adt.sql','s:0:\"\";'),(3,'extensionDataImport','typo3/sysext/fluid/ext_tables_static+adt.sql','s:0:\"\";'),(4,'extensionDataImport','typo3/sysext/extensionmanager/ext_tables_static+adt.sql','s:32:\"94016e92ca205a1ce91bb24480d736f8\";'),(5,'extensionDataImport','typo3/sysext/lang/ext_tables_static+adt.sql','s:0:\"\";'),(6,'extensionDataImport','typo3/sysext/backend/ext_tables_static+adt.sql','s:0:\"\";'),(7,'extensionDataImport','typo3/sysext/filelist/ext_tables_static+adt.sql','s:0:\"\";'),(8,'extensionDataImport','typo3/sysext/frontend/ext_tables_static+adt.sql','s:0:\"\";'),(9,'extensionDataImport','typo3/sysext/install/ext_tables_static+adt.sql','s:0:\"\";'),(10,'extensionDataImport','typo3/sysext/recordlist/ext_tables_static+adt.sql','s:0:\"\";'),(11,'extensionDataImport','typo3/sysext/saltedpasswords/ext_tables_static+adt.sql','s:0:\"\";'),(12,'extensionDataImport','typo3/sysext/sv/ext_tables_static+adt.sql','s:0:\"\";'),(13,'extensionDataImport','typo3/sysext/t3skin/ext_tables_static+adt.sql','s:0:\"\";'),(14,'extensionDataImport','typo3/sysext/cshmanual/ext_tables_static+adt.sql','s:0:\"\";'),(15,'extensionDataImport','typo3/sysext/scheduler/ext_tables_static+adt.sql','s:0:\"\";'),(16,'extensionDataImport','typo3conf/ext/typo3_console/ext_tables_static+adt.sql','s:0:\"\";'),(17,'core','formProtectionSessionToken:1',NULL);
+INSERT INTO `sys_registry` VALUES (1,'extensionDataImport','typo3/sysext/core/ext_tables_static+adt.sql','s:0:\"\";'),(2,'extensionDataImport','typo3/sysext/extbase/ext_tables_static+adt.sql','s:0:\"\";'),(3,'extensionDataImport','typo3/sysext/fluid/ext_tables_static+adt.sql','s:0:\"\";'),(4,'extensionDataImport','typo3/sysext/extensionmanager/ext_tables_static+adt.sql','s:32:\"94016e92ca205a1ce91bb24480d736f8\";'),(5,'extensionDataImport','typo3/sysext/lang/ext_tables_static+adt.sql','s:0:\"\";'),(6,'extensionDataImport','typo3/sysext/backend/ext_tables_static+adt.sql','s:0:\"\";'),(7,'extensionDataImport','typo3/sysext/filelist/ext_tables_static+adt.sql','s:0:\"\";'),(8,'extensionDataImport','typo3/sysext/frontend/ext_tables_static+adt.sql','s:0:\"\";'),(9,'extensionDataImport','typo3/sysext/install/ext_tables_static+adt.sql','s:0:\"\";'),(10,'extensionDataImport','typo3/sysext/recordlist/ext_tables_static+adt.sql','s:0:\"\";'),(11,'extensionDataImport','typo3/sysext/saltedpasswords/ext_tables_static+adt.sql','s:0:\"\";'),(12,'extensionDataImport','typo3/sysext/sv/ext_tables_static+adt.sql','s:0:\"\";'),(13,'extensionDataImport','typo3/sysext/t3skin/ext_tables_static+adt.sql','s:0:\"\";'),(14,'extensionDataImport','typo3/sysext/cshmanual/ext_tables_static+adt.sql','s:0:\"\";'),(15,'extensionDataImport','typo3/sysext/scheduler/ext_tables_static+adt.sql','s:0:\"\";'),(16,'extensionDataImport','typo3conf/ext/typo3_console/ext_tables_static+adt.sql','s:0:\"\";'),(17,'core','formProtectionSessionToken:1',NULL),(18,'extensionDataImport','typo3/sysext/tstemplate/ext_tables_static+adt.sql','s:0:\"\";');
 /*!40000 ALTER TABLE `sys_registry` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1843,7 +1845,7 @@ CREATE TABLE `sys_template` (
   KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`),
   KEY `parent` (`pid`,`deleted`,`hidden`,`sorting`),
   KEY `roottemplate` (`deleted`,`hidden`,`root`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1852,7 +1854,7 @@ CREATE TABLE `sys_template` (
 
 LOCK TABLES `sys_template` WRITE;
 /*!40000 ALTER TABLE `sys_template` DISABLE KEYS */;
-INSERT INTO `sys_template` VALUES (1,1,0,0,0,'',0,0,0,0,0,0,1639423294,0,1639423294,1,'Main TypoScript Rendering','DDB_Frontend_Viewer',0,0,0,1,1,'EXT:fluid_styled_content/Configuration/TypoScript/Static/,EXT:fluid_styled_content/Configuration/TypoScript/Styling/','','page = PAGE\npage.10 = TEXT\npage.10.value (\n   <div style=\"width: 800px; margin: 15% auto;\">\n      <div style=\"width: 300px;\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 150 42\"><path d=\"M60.2 14.4v27h-3.8v-27h-6.7v-3.3h17.1v3.3h-6.6zm20.2 12.9v14h-3.9v-14l-7.7-16.2h4.1l5.7 12.2 5.7-12.2h3.9l-7.8 16.2zm19.5 2.6h-3.6v11.4h-3.8V11.1s3.7-.3 7.3-.3c6.6 0 8.5 4.1 8.5 9.4 0 6.5-2.3 9.7-8.4 9.7m.4-16c-2.4 0-4.1.3-4.1.3v12.6h4.1c2.4 0 4.1-1.6 4.1-6.3 0-4.4-1-6.6-4.1-6.6m21.5 27.7c-7.1 0-9-5.2-9-15.8 0-10.2 1.9-15.1 9-15.1s9 4.9 9 15.1c.1 10.6-1.8 15.8-9 15.8m0-27.7c-3.9 0-5.2 2.6-5.2 12.1 0 9.3 1.3 12.4 5.2 12.4 3.9 0 5.2-3.1 5.2-12.4 0-9.4-1.3-12.1-5.2-12.1m19.9 27.7c-2.1 0-5.3-.6-5.7-.7v-3.1c1 .2 3.7.7 5.6.7 2.2 0 3.6-1.9 3.6-5.2 0-3.9-.6-6-3.7-6H138V24h3.1c3.5 0 3.7-3.6 3.7-5.3 0-3.4-1.1-4.8-3.2-4.8-1.9 0-4.1.5-5.3.7v-3.2c.5-.1 3-.7 5.2-.7 4.4 0 7 1.9 7 8.3 0 2.9-1 5.5-3.3 6.3 2.6.2 3.8 3.1 3.8 7.3 0 6.6-2.5 9-7.3 9\"/><path fill=\"#FF8700\" d=\"M31.7 28.8c-.6.2-1.1.2-1.7.2-5.2 0-12.9-18.2-12.9-24.3 0-2.2.5-3 1.3-3.6C12 1.9 4.3 4.2 1.9 7.2 1.3 8 1 9.1 1 10.6c0 9.5 10.1 31 17.3 31 3.3 0 8.8-5.4 13.4-12.8M28.4.5c6.6 0 13.2 1.1 13.2 4.8 0 7.6-4.8 16.7-7.2 16.7-4.4 0-9.9-12.1-9.9-18.2C24.5 1 25.6.5 28.4.5\"/></svg>\n      </div>\n      <h4 style=\"font-family: Verdana, Arial, Helvetica, sans-serif;\">Welcome to a default website made with <a href=\"https://typo3.org\">TYPO3</a></h4>\n   </div>\n)\npage.100 < styles.content.get','','This is an Empty Site Package TypoScript template.\n\nFor each website you need a TypoScript template on the main page of your website (on the top level). For better maintenance all TypoScript should be extracted into external files via <INCLUDE_TYPOSCRIPT: source=\"FILE:EXT:site_myproject/Configuration/TypoScript/setup.ts\">.',NULL,0,0,0,0);
+INSERT INTO `sys_template` VALUES (1,1,0,0,0,'',0,0,0,0,0,0,1639423294,0,1639423294,1,'Main TypoScript Rendering','DDB_Frontend_Viewer',0,0,0,1,1,'EXT:fluid_styled_content/Configuration/TypoScript/Static/,EXT:fluid_styled_content/Configuration/TypoScript/Styling/','','page = PAGE\npage.10 = TEXT\npage.10.value (\n   <div style=\"width: 800px; margin: 15% auto;\">\n      <div style=\"width: 300px;\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 150 42\"><path d=\"M60.2 14.4v27h-3.8v-27h-6.7v-3.3h17.1v3.3h-6.6zm20.2 12.9v14h-3.9v-14l-7.7-16.2h4.1l5.7 12.2 5.7-12.2h3.9l-7.8 16.2zm19.5 2.6h-3.6v11.4h-3.8V11.1s3.7-.3 7.3-.3c6.6 0 8.5 4.1 8.5 9.4 0 6.5-2.3 9.7-8.4 9.7m.4-16c-2.4 0-4.1.3-4.1.3v12.6h4.1c2.4 0 4.1-1.6 4.1-6.3 0-4.4-1-6.6-4.1-6.6m21.5 27.7c-7.1 0-9-5.2-9-15.8 0-10.2 1.9-15.1 9-15.1s9 4.9 9 15.1c.1 10.6-1.8 15.8-9 15.8m0-27.7c-3.9 0-5.2 2.6-5.2 12.1 0 9.3 1.3 12.4 5.2 12.4 3.9 0 5.2-3.1 5.2-12.4 0-9.4-1.3-12.1-5.2-12.1m19.9 27.7c-2.1 0-5.3-.6-5.7-.7v-3.1c1 .2 3.7.7 5.6.7 2.2 0 3.6-1.9 3.6-5.2 0-3.9-.6-6-3.7-6H138V24h3.1c3.5 0 3.7-3.6 3.7-5.3 0-3.4-1.1-4.8-3.2-4.8-1.9 0-4.1.5-5.3.7v-3.2c.5-.1 3-.7 5.2-.7 4.4 0 7 1.9 7 8.3 0 2.9-1 5.5-3.3 6.3 2.6.2 3.8 3.1 3.8 7.3 0 6.6-2.5 9-7.3 9\"/><path fill=\"#FF8700\" d=\"M31.7 28.8c-.6.2-1.1.2-1.7.2-5.2 0-12.9-18.2-12.9-24.3 0-2.2.5-3 1.3-3.6C12 1.9 4.3 4.2 1.9 7.2 1.3 8 1 9.1 1 10.6c0 9.5 10.1 31 17.3 31 3.3 0 8.8-5.4 13.4-12.8M28.4.5c6.6 0 13.2 1.1 13.2 4.8 0 7.6-4.8 16.7-7.2 16.7-4.4 0-9.9-12.1-9.9-18.2C24.5 1 25.6.5 28.4.5\"/></svg>\n      </div>\n      <h4 style=\"font-family: Verdana, Arial, Helvetica, sans-serif;\">Welcome to a default website made with <a href=\"https://typo3.org\">TYPO3</a></h4>\n   </div>\n)\npage.100 < styles.content.get','','This is an Empty Site Package TypoScript template.\n\nFor each website you need a TypoScript template on the main page of your website (on the top level). For better maintenance all TypoScript should be extracted into external files via <INCLUDE_TYPOSCRIPT: source=\"FILE:EXT:site_myproject/Configuration/TypoScript/setup.ts\">.',NULL,0,0,0,0),(2,3,0,0,0,'',0,0,0,0,0,0,1639475669,256,1639474446,1,'+ext','',0,0,0,0,2,'EXT:dlf/Configuration/TypoScript/,EXT:ddb_frontend_viewer/Configuration/TypoScript','config.storagePid = 2\r\nconfig.headNavPid = 0\r\nconfig.kitodoPageView = 0',NULL,'',NULL,'',0,0,0,0);
 /*!40000 ALTER TABLE `sys_template` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1937,7 +1939,7 @@ CREATE TABLE `tt_content` (
   KEY `t3ver_oid` (`t3ver_oid`,`t3ver_wsid`),
   KEY `parent` (`pid`,`sorting`),
   KEY `language` (`l18n_parent`,`sys_language_uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1946,6 +1948,7 @@ CREATE TABLE `tt_content` (
 
 LOCK TABLES `tt_content` WRITE;
 /*!40000 ALTER TABLE `tt_content` DISABLE KEYS */;
+INSERT INTO `tt_content` VALUES (1,3,0,0,0,'',0,0,0,0,0,0,1639474950,1639474890,1,0,0,1000000000,'list','','',NULL,0,0,0,2,0,0,0,1,0,NULL,'',0,0,0,'','','',0,'0','0','dlf_metadata','',1,0,NULL,0,'','',0,0,0,0,0,'<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>\n<T3FlexForms>\n    <data>\n        <sheet index=\"sDEF\">\n            <language index=\"lDEF\">\n                <field index=\"pages\">\n                    <value index=\"vDEF\">2</value>\n                </field>\n                <field index=\"excludeOther\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n                <field index=\"linkTitle\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n                <field index=\"targetPid\">\n                    <value index=\"vDEF\"></value>\n                </field>\n                <field index=\"getTitle\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n                <field index=\"showFull\">\n                    <value index=\"vDEF\">1</value>\n                </field>\n                <field index=\"rootline\">\n                    <value index=\"vDEF\">0</value>\n                </field>\n                <field index=\"separator\">\n                    <value index=\"vDEF\">#</value>\n                </field>\n                <field index=\"templateFile\">\n                    <value index=\"vDEF\"></value>\n                </field>\n            </language>\n        </sheet>\n    </data>\n</T3FlexForms>','',0,'',0,'a:18:{s:5:\"CType\";N;s:6:\"colPos\";N;s:16:\"sys_language_uid\";N;s:6:\"header\";N;s:13:\"header_layout\";N;s:4:\"date\";N;s:11:\"header_link\";N;s:14:\"rowDescription\";N;s:9:\"list_type\";N;s:11:\"pi_flexform\";N;s:12:\"sectionIndex\";N;s:9:\"linkToTop\";N;s:6:\"hidden\";N;s:9:\"starttime\";N;s:7:\"endtime\";N;s:8:\"fe_group\";N;s:8:\"editlock\";N;s:10:\"categories\";N;}',NULL,'',NULL,124,0,0,0,0);
 /*!40000 ALTER TABLE `tt_content` ENABLE KEYS */;
 UNLOCK TABLES;
 

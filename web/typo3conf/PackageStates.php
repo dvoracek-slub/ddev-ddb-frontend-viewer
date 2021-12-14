@@ -318,7 +318,7 @@ return [
         ],
         'tstemplate' => [
             'composerName' => 'typo3/cms-tstemplate',
-            'state' => 'inactive',
+            'state' => 'active',
             'packagePath' => 'typo3/sysext/tstemplate/',
             'suggestions' => [],
         ],
