@@ -13,11 +13,12 @@ web/index.php
 web/typo3
 
 web/typo3conf/
-!web/typo3conf/ext
+!web/typo3conf/LocalConfiguration.php
+!web/typo3conf/PackageStates.php
 
 web/fileadmin/_temp_
 web/fileadmin/user_upload/_temp_
 
 typo3temp
 
-extensions
+extensions/
