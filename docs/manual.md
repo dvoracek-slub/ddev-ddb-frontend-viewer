@@ -68,9 +68,21 @@ ddev typo3cms configuration:set FE/pageNotFoundOnCHashError 0
 ddev typo3cms extension:activate dlf
 ddev typo3cms extension:activate ddb_frontend_viewer
 
+ddev typo3cms extension:activate beuser
+ddev typo3cms extension:activate belog
+
 ddev typo3cms database:updateschema
 ```
+
+## Extension Order
+
+Make sure that `dlf` is listed before `ddb_frontend_viewer` in [web/typo3conf/PackageStates.php](../web/typo3conf/PackageStates.php).
 
 ## In TYPO3 Backend
 
 - Open extension configuration for Kitodo.Presentation (this is just to amend `LocalConfiguration.php`)
+- Create a backend user group `_cli_dlf`.
+- Create folder: `DDB_Frontend_Viewer > Data`
+  - In module `Kitodo > DDB Viewer`, add configuration
+  - In module `Kitodo > New Client`, grant access to `_cli_dlf`.
+- Create and enable page: `DDB_Frontend_Viewer > Home > Viewer`

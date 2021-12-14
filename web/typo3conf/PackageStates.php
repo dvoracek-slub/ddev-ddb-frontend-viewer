@@ -126,13 +126,13 @@ return [
         ],
         'belog' => [
             'composerName' => 'typo3/cms-belog',
-            'state' => 'inactive',
+            'state' => 'active',
             'packagePath' => 'typo3/sysext/belog/',
             'suggestions' => [],
         ],
         'beuser' => [
             'composerName' => 'typo3/cms-beuser',
-            'state' => 'inactive',
+            'state' => 'active',
             'packagePath' => 'typo3/sysext/beuser/',
             'suggestions' => [],
         ],
@@ -154,16 +154,16 @@ return [
             'packagePath' => 'typo3/sysext/dbal/',
             'suggestions' => [],
         ],
-        'ddb_frontend_viewer' => [
-            'composerName' => 'slub/ddb-frontend-viewer',
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/ddb_frontend_viewer/',
-            'suggestions' => [],
-        ],
         'dlf' => [
             'composerName' => 'kitodo/presentation',
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/dlf/',
+            'suggestions' => [],
+        ],
+        'ddb_frontend_viewer' => [
+            'composerName' => 'slub/ddb-frontend-viewer',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/ddb_frontend_viewer/',
             'suggestions' => [],
         ],
         'documentation' => [
