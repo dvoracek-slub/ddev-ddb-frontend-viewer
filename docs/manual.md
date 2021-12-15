@@ -102,8 +102,9 @@ Make sure that `dlf` is listed before `ddb_frontend_viewer` in [web/typo3conf/Pa
       - In `Includes`, select:
         - Basic Configuration (dlf)
         - DDB Frontend Viewer (ddb_frontend_viewer)
-    - Set Constants
-      - `config.storagePid = 2` (use the PID of data folder)
+    - Set constants
+      - `config.storagePid = 2` (use the PID of the data folder)
+      - `config.kitodoPageView = 3` (use the PID of viewer page)
 - Debug options in install tool (save by clicking "Write configuration"):
   - `[BE][debug]`
   - `[FE][debug]`
