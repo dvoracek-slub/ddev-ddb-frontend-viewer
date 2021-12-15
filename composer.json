@@ -15,7 +15,7 @@
     "require": {
         "typo3/cms": "^7.6",
         "helhum/typo3-console": "^4.9.6",
-        "slub/ddb-frontend-viewer": "dev-fix-compatibility",
+        "slub/ddb-frontend-viewer": "dev-master",
         "kitodo/presentation": "~2.3.0"
     },
     "extra": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1102bad7757ceb9b798619d85815588",
+    "content-hash": "f5c80e31cb87219f2b01be1bff3ff77c",
     "packages": [
         {
             "name": "brumann/polyfill-unserialize",
@@ -709,11 +709,11 @@
         },
         {
             "name": "slub/ddb-frontend-viewer",
-            "version": "dev-fix-compatibility",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./extensions/ddb-frontend-viewer",
-                "reference": "aba3cf3c3599e804f79dc7b575d748b04304bb40"
+                "reference": "8f3dfccad957d49e65ecedef5478f8420e1db419"
             },
             "require": {
                 "kitodo/presentation": "~2.3.0",

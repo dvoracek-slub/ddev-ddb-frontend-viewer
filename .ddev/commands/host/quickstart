@@ -7,7 +7,7 @@ set -x
 # NOTE: We don't need to call "ddev start" here, because this is being run as a DDEV command
 
 # Clone extension
-git clone --branch fix-compatibility git@github.com:Deutsche-Digitale-Bibliothek/ddb-frontend-viewer.git extensions/ddb-frontend-viewer/
+git clone --branch master git@github.com:Deutsche-Digitale-Bibliothek/ddb-frontend-viewer.git extensions/ddb-frontend-viewer/
 
 # Install dependencies
 ddev composer install

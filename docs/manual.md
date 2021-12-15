@@ -49,7 +49,7 @@ wget -O web/.htaccess https://raw.githubusercontent.com/TYPO3/typo3/v7.6.32/_.ht
 mkdir extensions
 touch extensions/.gitkeep
 
-git clone --branch fix-compatibility git@github.com:Deutsche-Digitale-Bibliothek/ddb-frontend-viewer.git extensions/ddb-frontend-viewer/
+git clone --branch master git@github.com:Deutsche-Digitale-Bibliothek/ddb-frontend-viewer.git extensions/ddb-frontend-viewer/
 
 ddev composer config minimum-stability dev
 
@@ -59,7 +59,7 @@ ddev composer config repositories.local path "./extensions/*"
 ddev composer config repositories.0 composer "https://composer.typo3.org/"
 
 ddev composer require kitodo/presentation:~2.3.0
-ddev composer require slub/ddb-frontend-viewer:dev-fix-compatibility
+ddev composer require slub/ddb-frontend-viewer:dev-master
 
 # Tolerate cHash errors, which is necessary when URLs containing a `tx_dlf[id]`
 # parameter are generated on the client.
